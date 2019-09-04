@@ -1,0 +1,36 @@
+$blockName: ".input-container";
+.form-control {
+  font-size: 14px;
+}
+#{$blockName} {
+  height: 35px;
+  padding-top: 0.5rem;
+  color: #333333;
+  font-size: 14px;
+  &--image {
+    padding-left: 2.5rem;
+  }
+  &:focus {
+    border: 1px solid #00aaa4;
+    box-shadow: none;
+    color: #333333;
+  }
+  &__icon {
+    padding-left: 2.5rem;
+  }
+  &__icon-image {
+    max-width: 25px;
+    max-height: 25px;
+    position: absolute;
+    top: 6px;
+    left: 12px;
+  }
+
+  &__icon-clear {
+    max-width: 25px;
+    max-height: 25px;
+    position: absolute;
+    top: 6px;
+    right: 12px;
+  }
+}

@@ -1,18 +1,28 @@
 import React from 'react';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-import { BrowserRouter } from "react-router-dom";
+import SignInPage from './pages/SigninPage';
+import HomePage from './pages/HomePage';
+import AuthenticatedRoute from './components/AuthRoute';
+import NavigationBar from './components/NavigationBar';
+import store from './store';
+import './App.css';
 
-ReactDOM.render(
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>, 
-    document.getElementById('root')
-);
+const App = () => {
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <React.Fragment>
+          <NavigationBar />
+          <Switch>
+            <Route exact path="/" component={SignInPage} />
+            <AuthenticatedRoute exact path="/home" component={HomePage} />
+          </Switch>
+        </React.Fragment>
+      </BrowserRouter>
+    </Provider>
+  );
+};
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(<App />, document.getElementById('root'));
