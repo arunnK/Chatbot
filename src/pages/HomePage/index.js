@@ -77,7 +77,6 @@ const HomePage = ({ serverMessages, clientMessages, ...props }) => {
             onChange={ev => setMessage(ev.target.value)}
             onKeyPress={handleKeyPress}
             placeholder="Type here and press Enter"
-            disabled={chatDisabled}
           />
           <Button style={{ flexBasis: '30%' }} variant="primary" onClick={handleClick}>
             Send
