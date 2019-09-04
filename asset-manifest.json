@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "%60.github.io/chatbot/static/css/main.cb79800b.chunk.css",
-    "main.js": "%60.github.io/chatbot/static/js/main.4a1221f4.chunk.js",
-    "main.js.map": "%60.github.io/chatbot/static/js/main.4a1221f4.chunk.js.map",
-    "runtime~main.js": "%60.github.io/chatbot/static/js/runtime~main.80ed473d.js",
-    "runtime~main.js.map": "%60.github.io/chatbot/static/js/runtime~main.80ed473d.js.map",
-    "static/js/2.7105bc32.chunk.js": "%60.github.io/chatbot/static/js/2.7105bc32.chunk.js",
-    "static/js/2.7105bc32.chunk.js.map": "%60.github.io/chatbot/static/js/2.7105bc32.chunk.js.map",
-    "index.html": "%60.github.io/chatbot/index.html",
-    "precache-manifest.21a1a6303c4b5d43057f5a0eb436e047.js": "%60.github.io/chatbot/precache-manifest.21a1a6303c4b5d43057f5a0eb436e047.js",
-    "service-worker.js": "%60.github.io/chatbot/service-worker.js",
-    "static/css/main.cb79800b.chunk.css.map": "%60.github.io/chatbot/static/css/main.cb79800b.chunk.css.map"
+    "main.css": "/chatbot/static/css/main.cb79800b.chunk.css",
+    "main.js": "/chatbot/static/js/main.4a1221f4.chunk.js",
+    "main.js.map": "/chatbot/static/js/main.4a1221f4.chunk.js.map",
+    "runtime~main.js": "/chatbot/static/js/runtime~main.6cefce26.js",
+    "runtime~main.js.map": "/chatbot/static/js/runtime~main.6cefce26.js.map",
+    "static/js/2.7105bc32.chunk.js": "/chatbot/static/js/2.7105bc32.chunk.js",
+    "static/js/2.7105bc32.chunk.js.map": "/chatbot/static/js/2.7105bc32.chunk.js.map",
+    "index.html": "/chatbot/index.html",
+    "precache-manifest.e76dbc0394f3cccfbbc46f88aaf19866.js": "/chatbot/precache-manifest.e76dbc0394f3cccfbbc46f88aaf19866.js",
+    "service-worker.js": "/chatbot/service-worker.js",
+    "static/css/main.cb79800b.chunk.css.map": "/chatbot/static/css/main.cb79800b.chunk.css.map"
   }
 }
