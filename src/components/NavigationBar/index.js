@@ -17,14 +17,13 @@ const NavigationBarComponent = ({ ...props }) => {
   if (pathname === '/') return null;
   return (
     <Navbar
-      id="primary-navigation"
       className="navigation-container"
       collapseOnSelect
       expand="lg"
       variant="light"
       style={{ padding: '.5rem 1.5rem .5rem 1.5rem' }}
     >
-      <Nav.Link onClick={handleClick} as="div" className="right-side-navigation__navlink">
+      <Nav.Link onClick={handleClick} as="div" className="right-side-navigation_navlink">
         Sign out
       </Nav.Link>
     </Navbar>

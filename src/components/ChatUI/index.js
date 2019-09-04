@@ -7,9 +7,11 @@ const ChatUI = ({ serverMessages, clientMessages }) => {
     <React.Fragment>
       {serverMessages.map((serverMessage, index) => (
         <React.Fragment>
+          <span>You: </span>
           <Toast show style={{ width: '50%' }}>
             <Toast.Body>{clientMessages[index]}</Toast.Body>
           </Toast>
+          <span style={{ width: '50%', marginLeft: '55%' }}>Bot: </span>
           <Toast show style={{ width: '50%', marginLeft: '55%' }}>
             <Toast.Body>{serverMessage}</Toast.Body>
           </Toast>
@@ -20,8 +22,8 @@ const ChatUI = ({ serverMessages, clientMessages }) => {
 };
 
 ChatUI.propTypes = {
-  serverMessages: PropTypes.shape([]).isRequired,
-  clientMessages: PropTypes.shape([]).isRequired
+  serverMessages: PropTypes.arrayOf(PropTypes.string).isRequired,
+  clientMessages: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 ChatUI.defaultProps = {};

@@ -1,10 +1,5 @@
 import React, { useReducer, useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-import get from 'lodash/get';
-import { signInUserSuccess } from './actions';
 
 import './sign-in.styles.scss';
 
@@ -92,19 +87,4 @@ SignIn.propTypes = {
   userEmail: PropTypes.string.isRequired,
   history: PropTypes.shape({}).isRequired
 };
-
-const mapStateToProps = ({ userState }) => {
-  return {
-    userEmail: get(userState, 'user.email', null)
-  };
-};
-const mapDispatchToProps = (dispatch) => {
-  return {
-    signInUserSuccess: bindActionCreators(signInUserSuccess, dispatch)
-  };
-};
-
-export default withRouter(connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SignIn));
+export default SignIn;

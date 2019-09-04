@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { Route, Switch, HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 import SignInPage from './pages/SigninPage';
@@ -12,7 +12,7 @@ import './App.css';
 const App = () => {
   return (
     <Provider store={store}>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter basename="/">
         <React.Fragment>
           <NavigationBar />
           <Switch>
@@ -20,7 +20,7 @@ const App = () => {
             <AuthenticatedRoute exact path="/home" component={HomePage} />
           </Switch>
         </React.Fragment>
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   );
 };

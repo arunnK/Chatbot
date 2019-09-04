@@ -2,7 +2,7 @@
   "name": "chatbot",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://arunnk`.github.io/chatbot",
+  "homepage": "https://arunnk.github.io/chatbot",
   "dependencies": {
     "babel-eslint": "10.0.2",
     "bootstrap": "^4.3.1",

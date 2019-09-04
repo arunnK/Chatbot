@@ -13,6 +13,7 @@ const wsUri = 'wss://echo.websocket.org/';
 
 const HomePage = ({ serverMessages, clientMessages, ...props }) => {
   const [message, setMessage] = useState('');
+
   const websocket = useRef();
 
   useEffect(() => {
@@ -28,6 +29,8 @@ const HomePage = ({ serverMessages, clientMessages, ...props }) => {
   const handleClick = () => {
     props.sendClientMessage({ message });
     doSend(message, websocket.current, props.sendMessageToBot);
+    const chatBox = document.getElementById('chat-container');
+    chatBox.scrollTop = chatBox.scrollHeight + chatBox.offsetHeight;
     setMessage('');
   };
 
@@ -45,10 +48,11 @@ const HomePage = ({ serverMessages, clientMessages, ...props }) => {
           display: 'flex',
           flexDirection: 'column',
           height: '80%',
-          top: '5%'
+          top: '10%'
         }}
       >
         <Card.Body
+          id="chat-container"
           style={{
             color: 'black',
             flexBasis: '88%',
@@ -56,10 +60,7 @@ const HomePage = ({ serverMessages, clientMessages, ...props }) => {
             overflowY: 'auto'
           }}
         >
-          <Card.Title style={{ position: 'fixed' }}>Chatbox</Card.Title>
-          <div style={{ paddingTop: '5vh' }}>
-            <ChatUI clientMessages={clientMessages} serverMessages={serverMessages} />
-          </div>
+          <ChatUI clientMessages={clientMessages} serverMessages={serverMessages} />
         </Card.Body>
         <Col
           style={{
@@ -75,6 +76,8 @@ const HomePage = ({ serverMessages, clientMessages, ...props }) => {
             value={message}
             onChange={ev => setMessage(ev.target.value)}
             onKeyPress={handleKeyPress}
+            placeholder="Type here and press Enter"
+            disabled={chatDisabled}
           />
           <Button style={{ flexBasis: '30%' }} variant="primary" onClick={handleClick}>
             Send
@@ -86,8 +89,8 @@ const HomePage = ({ serverMessages, clientMessages, ...props }) => {
 };
 
 HomePage.propTypes = {
-  serverMessages: PropTypes.shape([]).isRequired,
-  clientMessages: PropTypes.shape([]).isRequired,
+  serverMessages: PropTypes.arrayOf(PropTypes.string).isRequired,
+  clientMessages: PropTypes.arrayOf(PropTypes.string).isRequired,
   sendMessageToBot: PropTypes.func.isRequired,
   sendClientMessage: PropTypes.func.isRequired
 };
