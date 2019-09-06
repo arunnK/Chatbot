@@ -7,16 +7,16 @@ export const onOpen = () => {
 
 export const onClose = () => {};
 
-// export const onMessage = () => {
-//   // websocket.close();
-// };
+export const onMessage = (message, sendMessageToBot) => {
+  sendMessageToBot({ message });
+  console.log('onmess', message);
+};
 
 // export const onError = () => {
 // };
 
-export const doSend = (message, websocket, sendMessageToBot) => {
+export const doSend = (message, websocket) => {
   websocket.send(message);
-  sendMessageToBot({ message });
 };
 
 export const sendMessageToBot = ({ message }) => ({

@@ -4,7 +4,7 @@ import { Button, Card, Col } from 'react-bootstrap';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import ChatUI from '../../components/ChatUI';
-import { sendMessageToBot, onOpen, onClose, doSend, sendClientMessage } from './actions';
+import { sendMessageToBot, onOpen, onClose, doSend, sendClientMessage, onMessage } from './actions';
 import Input from '../../components/Input';
 
 import './home-page.scss';
@@ -24,11 +24,14 @@ const HomePage = ({ serverMessages, clientMessages, ...props }) => {
     websocket.current.onclose = function (evt) {
       onClose(evt);
     };
+    websocket.current.onmessage = function (evt) {
+      onMessage(evt.data, props.sendMessageToBot);
+    };
   }, []);
 
   const handleClick = () => {
     props.sendClientMessage({ message });
-    doSend(message, websocket.current, props.sendMessageToBot);
+    doSend(message, websocket.current);
     const chatBox = document.getElementById('chat-container');
     chatBox.scrollTop = chatBox.scrollHeight + chatBox.offsetHeight;
     setMessage('');
